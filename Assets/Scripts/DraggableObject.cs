@@ -34,7 +34,7 @@ public class DraggableObject : MonoBehaviour
                 _snapped = true;
                 transform.DOMove(_snappingGameObject.transform.position, 0.1f).OnComplete(() =>
                 {
-                    // TODO tell level manager that an objective was completed
+                    LevelManager.Instance.CompleteObjective();
                 });
             }
             else
