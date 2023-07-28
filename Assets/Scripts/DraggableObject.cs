@@ -14,6 +14,7 @@ public class DraggableObject : MonoBehaviour
     {
         if (!_animating && !_snapped)
         {
+            SoundManager.PlaySFX(1);
             _startPosition = transform.position;
             _offset = (Vector2)transform.position - GetMouseWorldPos();
         }
@@ -32,6 +33,7 @@ public class DraggableObject : MonoBehaviour
             if (_canSnap)
             {
                 _snapped = true;
+                SoundManager.PlaySFX(1);
                 transform.DOMove(_snappingGameObject.transform.position, 0.1f).OnComplete(() =>
                 {
                     LevelManager.Instance.CompleteObjective();
@@ -42,6 +44,7 @@ public class DraggableObject : MonoBehaviour
                 _animating = true;
                 transform.DOMove(_startPosition, 1).OnComplete(() =>
                 {
+                    SoundManager.PlaySFX(1);
                     _animating = false;
                 });
             }
