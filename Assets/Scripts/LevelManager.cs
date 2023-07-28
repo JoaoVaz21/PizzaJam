@@ -40,6 +40,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         //TODO do animations
+        StartLevel?.Invoke();
     }
 
     // Update is called once per frame
@@ -56,5 +57,12 @@ public class LevelManager : MonoBehaviour
             //TODO Finish animations and switch level;
             EndLevel?.Invoke();
         }
+    }
+
+    public void GameOver()
+    {
+        //TODO validations
+        //TODO show end animation, reset level
+        Debug.Log("Game over - time");
     }
 }

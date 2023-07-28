@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4625519272068147644}
   - component: {fileID: 4625519272068147635}
   m_Layer: 0
-  m_Name: DropZone
+  m_Name: PF_DropZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
