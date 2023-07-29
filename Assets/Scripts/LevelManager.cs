@@ -66,6 +66,8 @@ public class LevelManager : MonoBehaviour
         if (totalObjectives==_currentObjectiveCount)
         {
             Debug.Log("LevelWon");
+            _levelWon = true;
+
             //TODO Finish animations and switch level;
             EndLevel?.Invoke();
         }
