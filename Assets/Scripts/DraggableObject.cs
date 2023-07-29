@@ -68,6 +68,7 @@ public class DraggableObject : MonoBehaviour
                 _particleSystem.Stop();
                 transform.DOMove(_snappingGameObject.transform.position, 0.1f).OnComplete(() =>
                 {
+                    transform.rotation = _snappingGameObject.transform.rotation;
                     LevelManager.Instance.CompleteObjective();
                 });
             }
