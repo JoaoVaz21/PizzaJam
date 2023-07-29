@@ -25,10 +25,12 @@ public class ScreenManager : MonoBehaviour
     private void OnGameOver()
     {
         retryPanel.SetActive(true);
+        SoundManager.PlaySFX(3);
     }
 
     private void OnVictory()
     {
         victoryPanel.SetActive(true);
+        SoundManager.PlaySFX(2);
     }
 }

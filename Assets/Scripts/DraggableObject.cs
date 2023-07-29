@@ -9,6 +9,7 @@ public class DraggableObject : MonoBehaviour
     private bool _animating = false;
     private bool _canSnap = false;
     private bool _snapped = false;
+    private bool _canDrag = true;
     private GameObject _snappingGameObject;
     [SerializeField]
     private ParticleSystem _particleSystem;
@@ -21,6 +22,13 @@ public class DraggableObject : MonoBehaviour
     private void Start()
     {
         LevelManager.Instance.Victory+=OnVictory;
+        LevelManager.Instance.GameOver+=OnGameOver;
+    }
+
+    private void OnGameOver()
+    {
+        _canDrag = false;
+        transform.position = _startPosition;
     }
 
     private void OnVictory()
@@ -28,9 +36,14 @@ public class DraggableObject : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
+    private bool CanDrag()
+    {
+        return _canDrag && !_animating && !_snapped;
+    }
+
     private void OnMouseDown()
     {
-        if (!_animating && !_snapped)
+        if (CanDrag())
         {
             SoundManager.PlaySFX(1);
             _startPosition = transform.position;
@@ -40,7 +53,7 @@ public class DraggableObject : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (!_snapped)
+        if (!_snapped && _canDrag)
             transform.position = Vector2.Lerp(transform.position, GetMouseWorldPos() + _offset, 0.8f);
     }
 
