@@ -15,6 +15,7 @@ public class PlayButton : ButtonWithSFX
 
     public void StartLevel(string name)
     {
+        SoundManager.PlayMusic(1);
         SceneManager.LoadScene(name);
     }
 }

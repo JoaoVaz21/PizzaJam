@@ -40,7 +40,7 @@ public class SoundManager : MonoBehaviour
         musicSource.volume = PlayerPrefs.GetFloat("MusicVolumeValue", 1);
         sfxSource.volume = PlayerPrefs.GetFloat("SfxVolumeValue", 1);
 
-        // PlayMusic(0);
+        PlayMusic(0);
     }
 
     public static void PlayMusic(int index)
