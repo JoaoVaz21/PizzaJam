@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,9 +34,9 @@ public class LevelManager : MonoBehaviour
     private int totalObjectives;
     private bool _levelWon = false;
     [SerializeField]
-    private GameObject[] imagesToHideOnGameComplete;
+    private GameObject[] imagesToHideOnLevelComplete;
     [SerializeField]
-    private GameObject[] ImagesToShowOnGameComplete;
+    private GameObject[] ImagesToShowOnLevelComplete;
 
     private int _currentObjectiveCount = 0;
 
@@ -86,12 +87,12 @@ public class LevelManager : MonoBehaviour
     {
         if (_levelWon)
         {
-            Victory?.Invoke();
-            foreach (var gameObject in imagesToHideOnGameComplete)
+            StartCoroutine(DelayVictoryAnnouncement());
+            foreach (var gameObject in imagesToHideOnLevelComplete)
             {
                 gameObject.SetActive(false);
             }
-            foreach (var gameObject in ImagesToShowOnGameComplete)
+            foreach (var gameObject in ImagesToShowOnLevelComplete)
             {
                 gameObject.SetActive(true);
             }
@@ -100,6 +101,14 @@ public class LevelManager : MonoBehaviour
         {
             GameOver?.Invoke();
         }
+    }
+
+    private IEnumerator DelayVictoryAnnouncement()
+    {
+        yield return new WaitForSeconds(0.2f);
+        SoundManager.PlaySFX(2);
+        yield return new WaitForSeconds(1.2f);
+        Victory?.Invoke();
     }
 
     public void ChangeScene()

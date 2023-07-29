@@ -12,6 +12,10 @@ public class ScreenManager : MonoBehaviour
     private GameObject retryPanel;
     [SerializeField]
     private Button retryBtn;
+    [SerializeField]
+    private GameObject victoryScreenBackgroundImage;
+    [SerializeField]
+    private GameObject gameOverScreenBackgroundImage;
 
     // Start is called before the first frame update
     private void Start()
@@ -24,13 +28,14 @@ public class ScreenManager : MonoBehaviour
 
     private void OnGameOver()
     {
+        gameOverScreenBackgroundImage.SetActive(true);
         retryPanel.SetActive(true);
         SoundManager.PlaySFX(3);
     }
 
     private void OnVictory()
     {
+        victoryScreenBackgroundImage.SetActive(true);
         victoryPanel.SetActive(true);
-        SoundManager.PlaySFX(2);
     }
 }
