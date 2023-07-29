@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using UnityEngine;
 
 public class DraggableObject : MonoBehaviour
@@ -9,6 +10,23 @@ public class DraggableObject : MonoBehaviour
     private bool _canSnap = false;
     private bool _snapped = false;
     private GameObject _snappingGameObject;
+    [SerializeField]
+    private ParticleSystem _particleSystem;
+
+    private void Awake()
+    {
+        _particleSystem.Stop();
+    }
+
+    private void Start()
+    {
+        LevelManager.Instance.Victory+=OnVictory;
+    }
+
+    private void OnVictory()
+    {
+        this.gameObject.SetActive(false);
+    }
 
     private void OnMouseDown()
     {
@@ -34,6 +52,7 @@ public class DraggableObject : MonoBehaviour
             {
                 _snapped = true;
                 SoundManager.PlaySFX(1);
+                _particleSystem.Stop();
                 transform.DOMove(_snappingGameObject.transform.position, 0.1f).OnComplete(() =>
                 {
                     LevelManager.Instance.CompleteObjective();
@@ -60,6 +79,8 @@ public class DraggableObject : MonoBehaviour
     {
         _snappingGameObject = gameObject;
         _canSnap = true;
+        _particleSystem.gameObject.SetActive(true);
+        _particleSystem.Play();
     }
 
     public void UnsetSnappingPoint(GameObject gameObject)
@@ -67,6 +88,7 @@ public class DraggableObject : MonoBehaviour
         if (gameObject == _snappingGameObject)
         {
             _canSnap = false;
+            _particleSystem.Stop();
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,14 @@ public class TimerCountdown : MonoBehaviour
     private void Start()
     {
         LevelManager.Instance.StartLevel+=StartCountdown;
+        LevelManager.Instance.EndLevel+=OnEndLevel;
         slider.value = 1;
+    }
+
+    private void OnEndLevel()
+    {
+        StopAllCoroutines();
+        this.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -38,7 +46,7 @@ public class TimerCountdown : MonoBehaviour
             currentTime-= Time.deltaTime;
             if (currentTime<0)
             {
-                LevelManager.Instance.GameOver();
+                LevelManager.Instance.SetGameOver();
             }
             else
             {

@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayButton : MonoBehaviour, IPointerDownHandler
+public class PlayButton : ButtonWithSFX
 {
     private Button _btn;
 
@@ -16,10 +16,5 @@ public class PlayButton : MonoBehaviour, IPointerDownHandler
     public void StartLevel(string name)
     {
         SceneManager.LoadScene(name);
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        SoundManager.PlaySFX(0);
     }
 }
