@@ -2210,6 +2210,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5d93aa881879c4dbc855e1b4e513c647, type: 3}
+    - target: {fileID: 3314285426380559927, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314285426380559927, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 3314285427079058883, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
       propertyPath: m_Name
       value: ScreenManager
@@ -2266,6 +2274,14 @@ PrefabInstance:
       propertyPath: gameOverScreenBackgroundImage
       value: 
       objectReference: {fileID: 390349484}
+    - target: {fileID: 3314285427345074984, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314285427345074984, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 3314285427345074986, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
       propertyPath: m_Sprite
       value: 

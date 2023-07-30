@@ -1501,6 +1501,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1360093374}
     m_Modifications:
+    - target: {fileID: 3314285426380559927, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314285426380559927, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314285426380559927, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 3314285427079058883, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
       propertyPath: m_Name
       value: ScreenManager
@@ -1557,6 +1569,14 @@ PrefabInstance:
       propertyPath: gameOverScreenBackgroundImage
       value: 
       objectReference: {fileID: 390349484}
+    - target: {fileID: 3314285427345074984, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314285427345074984, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.21
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9498dd20857be5848a8048a811ec06b9, type: 3}
 --- !u!1001 &4347455640510244379
