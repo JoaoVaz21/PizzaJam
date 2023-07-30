@@ -1644,6 +1644,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1360093374}
     m_Modifications:
+    - target: {fileID: 7808663335675510670, guid: 323daf218b699c543b9b09ccce7435f1, type: 3}
+      propertyPath: timeLimit
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7808663335675510672, guid: 323daf218b699c543b9b09ccce7435f1, type: 3}
       propertyPath: m_Name
       value: Timer
